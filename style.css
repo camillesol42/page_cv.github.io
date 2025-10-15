@@ -1,0 +1,268 @@
+:root {
+    --couleur-primaire: #e27bca65; 
+    --couleur-primaire-claire: #fab6e895;
+    --couleur-texte: #050000;
+    --couleur-fond: #f1c4eb; 
+    --font-stack: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-stack);
+    color: var(--couleur-texte);
+    background-color: var(--couleur-fond);
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: var(--couleur-primaire);
+    border-bottom: 2px solid var(--couleur-primaire-claire);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.header-profil {
+    background-color: rgb(255, 255, 255);
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+
+.poste {
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #555;
+    margin-top: 5px;
+}
+
+.statut {
+    font-style: italic;
+    font-size: 0.9em;
+    margin-top: 10px;
+    color: #777;
+}
+
+.summary-box {
+    margin: 20px auto 0;
+    padding: 15px;
+    background-color: #ecf0f1;
+    border-left: 5px solid var(--couleur-primaire);
+    max-width: 800px;
+    text-align: left;
+    font-size: 0.95em;
+}
+
+
+.cv-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.colonne-gauche {
+    padding-right: 15px;
+}
+
+.colonne-droite {
+    padding-left: 15px;
+    border-left: 1px dashed #ccc;
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+.interet-card {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    border-radius: 4px;
+    background-color: var(--couleur-fond);
+    cursor: pointer;
+    overflow: hidden; 
+    font-size: 0.9em; 
+    color: #666;
+    
+    transition: background-color 0.3s ease; 
+}
+
+.interet-card:hover {
+    background-color: var(--couleur-primaire-claire); 
+    color: white; 
+}
+
+.interet-card i {
+    color: var(--couleur-primaire);
+    margin-right: 8px;
+    transition: color 0.3s ease; 
+}
+
+.interet-card:hover i {
+    color: white;
+}
+
+.interet-nom {
+    font-weight: normal; 
+}
+
+.interet-detail {
+    max-width: 0; 
+    opacity: 0; 
+    color: #eee;
+    white-space: nowrap;
+    
+    transition: max-width 0.5s ease-in-out, opacity 0.4s ease-in-out; 
+}
+
+.interet-card:hover .interet-detail {
+    max-width: 250px; 
+    opacity: 1; 
+    color: white; 
+    padding-left: 10px; 
+}
+
+.formation-item, .projet-item {
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border-left: 3px solid var(--couleur-primaire-claire);
+}
+.diplome-titre {
+    font-weight: bold;
+}
+.etablissement {
+    font-style: italic;
+    font-size: 0.9em;
+    color: #d3d0d3;
+}
+
+.competence-item {
+    margin-bottom: 10px;
+}
+.nom-competence {
+    display: block;
+    font-size: 0.9em;
+    margin-bottom: 3px;
+    color: #323132;
+}
+
+.barre-progression {
+    background-color: #f5e1f3;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.niveau-atteint {
+    background-color: var(--couleur-primaire);
+    height: 100%;
+    width:0;
+    transition: width 1.2s ease-out; 
+}
+
+#test {
+    color: rgb(248, 190, 229);
+}
+
+.job-card {
+    border: 1px solid #f5c3e7;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+.job-card:hover {
+    box-shadow: 0 4px 8px rgba(250, 180, 232, 0.1); 
+}
+
+details {
+    cursor: pointer;
+}
+
+summary {
+    display: block; 
+    padding: 15px;
+    background-color: var(--couleur-fond);
+    border-bottom: 1px solid #f7e0f7;
+    font-weight: bold;
+    color: var(--couleur-texte);
+    outline: none; 
+    list-style: none; 
+}
+
+summary::before {
+    content: "\25B6"; 
+    margin-right: 10px;
+    color: var(--couleur-primaire);
+    transition: transform 0.2s;
+}
+
+details[open] summary::before {
+    content: "\25BC"; }
+
+.job-title-line {
+    display: flex;
+    justify-content: space-between;
+}
+
+.poste-titre {
+    font-size: 1.1em;
+    color: var(--couleur-primaire);
+}
+
+.job-lieu-date {
+    font-weight: normal;
+    font-size: 0.9em;
+    color: #f4d5f1;
+}
+
+.job-details {
+    padding: 15px 20px 15px 40px;
+    background-color: white;
+}
+
+.job-details li {
+    margin-bottom: 5px;
+    list-style-type: disc;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: var(--couleur-primaire);
+    color: white;
+    font-size: 0.8em;
+}
+
+
+
+    .cv-container {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    
+    .colonne-droite {
+        border-left: none; 
+        padding-left: 0;
+    }
+    
+    .colonne-gauche {
+        padding-right: 0;
+    }
